@@ -1,0 +1,76 @@
+:root {
+    --prim: #77D2F9;
+    --sec: #ffffff;
+    --thir: #FFE5B4;
+    --shadow: rgb(168, 168, 168)
+}
+
+/*making color variables, use them or add to them to make life easier. 
+if you don't know how to use them, just do "--(variable name)" and vscode will complete it for you*/
+
+/*lowk doesn't work */
+body {
+    font-family: "Sniglet", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    display: flex;
+    /*styling the header blue and making it go into the middle*/
+    flex-direction: column;
+    background-color: var(--prim);
+    margin: 40px 0px;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+    width: 300px;
+    justify-self: center;
+}
+
+.cont {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    background-color: var(--thir);
+    width: 150px;
+    padding: 20px;
+    border: black solid 2px;
+    text-decoration: none;
+    border-radius: 10px;
+    color: black;
+    box-shadow:0 3px 3px var(--shadow);
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    margin-top: 2rem;
+  }
+  
+  /* Line */
+  .navBar:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20%;
+    height: 4px;
+    background: #ddd;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+  /* Needs to be made round, likely issue with width and height
+  hopefully will make all back arrows consistent */
+.backBtn {
+    border: black solid 1px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 1.5rem;
+}
