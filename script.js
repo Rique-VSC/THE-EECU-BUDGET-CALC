@@ -1,25 +1,53 @@
-// @ts-check
-const page_view = /** @type {HTMLDivElement} */ (document.querySelector('.current-page'));
-let current_page_number = 0;
-const templates = [...document.querySelectorAll('template')];
-const contBtn = (document.querySelector('#cont'));
-const backBtn = (document.querySelector('#back'));
+import './navigation.js';
 
-//Next and back buttons are still a bit finicky, but they work
-function next_page() {
-    if (current_page_number >= templates.length) return;
-    const fragment = templates[current_page_number++].content.cloneNode(true);
-    page_view.replaceChildren(fragment);
+const view = document.querySelector('.current-page');
+
+/** @type {Map<string, Category>} */
+const categories = new Map();
+
+class Category {
+    /** @type {HTMLInputElement[]} */
+    inputs = [];
+    /** @type {Map<string, number>} */
+    values = new Map();
+    name = '';
+    constructor(name) {
+        this.name = name;
+        this.inputs = [...view.querySelectorAll('input')];
+        for (const input of this.inputs) {
+            input.addEventListener('input', () => {
+                this.values.set(
+                    input.previousElementSibling.textContent,
+                    Number(input.value)
+                );
+                input.value = Number(input.value).toFixed(2);
+            });
+            this.values.set(input.previousElementSibling.textContent, Number(input.value));
+        }
+    }
 }
 
-function back_page() {
-    if (current_page_number <= 0) return;
-    const fragment = templates[--current_page_number].content.cloneNode(true);
-    page_view.replaceChildren(fragment);
-}
+let last = view.id;
+const observer = new MutationObserver(() => {
+    if (last !== view.id) {
+        if (categories.has(view.id)) {
+            const category = categories.get(view.id);
+            for (let i = 0; i < category.inputs.length; i++) {
+                const prev_input = category.inputs[i];
+                const input = view.querySelectorAll('input').item(i);
+                input.value = prev_input.value;
+            }
+            categories.set(last = view.id, new Category(view.id));
+        } else {
+            categories.set(last = view.id, new Category(view.id));
+        }
+        console.log(categories);
+    }
+});
 
+observer.observe(view, {
+    subtree: true,
+    childList: true
+});
 
-next_page();
-
-contBtn.addEventListener('click', next_page );
-backBtn.addEventListener('click', back_page);
+categories.set(view.id, new Category(last));

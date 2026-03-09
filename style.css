@@ -54,7 +54,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 70px;
+    gap: 0;
     background-color: var(--prim);
     width: calc(100% - 50px);
     height: 50px;
@@ -186,6 +186,40 @@ main {
     background-color: var(--thir);
 }
 
+hr {
+    width: 100%;
+    border: none;
+    height: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+hr.fulfilled:is(img.fulfilled ~ hr) {
+    background-image: linear-gradient(to right, #D9D9D9, #FFFFFF);
+}
+
+hr.fulfilled {
+    background: #d9d9d9;
+}
+
+hr.fulfilled:not(img.fulfilled ~ hr) {
+    background-image: linear-gradient(to left, #D9D9D9, #FFFFFF);
+}
+
+hr:not(.fulfilled) {
+    background-color: transparent;
+    border: none;
+    opacity: 0;
+    width: 100%;
+}
+
+.fulfilled:has(img) {
+    filter: brightness(85%);
+}
+
+.breadCrumb {
+    aspect-ratio: 1;
+}
 
 /* old- - bring this back if needed */
 

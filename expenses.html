@@ -1,150 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Education</title>
+        <link rel="stylesheet" href="style.css" />
+        <script type="module" src="script.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="script.js"></script>
-</head>
+    <body>
+        <nav class="navBar">
+            <a class="breadCrumb fulfilled" id="page-student"
+                ><img src="imgs/student-bold.png" alt="Education icon"
+            /></a>
+            <hr />
+            <a class="breadCrumb" id="page-housing"
+                ><img src="imgs/house-bold.png" alt="Housing icon"
+            /></a>
+            <hr />
+            <a class="breadCrumb" id="page-essentials"
+                ><img
+                    src="imgs/bookmarks-simple-fill.png"
+                    alt="Essentials icon"
+            /></a>
+            <hr />
+            <a class="breadCrumb" id="page-lifestyle"
+                ><img
+                    src="imgs/address-book-tabs-bold.png"
+                    alt="Lifestyle icon"
+            /></a>
+            <hr />
+            <a class="breadCrumb" id="page-future-proofing"
+                ><img src="imgs/bank-bold.png" alt="Savings icon"
+            /></a>
+        </nav>
 
-<body>
-    <nav class="navBar">
-        <a class="breadCrumb" id="edu"><img src="imgs/student-bold.png" alt="Education icon"></a>
-        <a class="breadCrumb" id="housing"><img src="imgs/house-bold.png" alt="Housing icon"></a>
-        <a class="breadCrumb" id="essentials"><img src="imgs/bookmarks-simple-fill.png" alt="Essentials icon"></a>
-        <a class="breadCrumb" id="lifestyle"><img src="imgs/address-book-tabs-bold.png" alt="Lifestyle icon"></a>
-        <a class="breadCrumb" id="savings"><img src="imgs/bank-bold.png" alt="Savings icon"></a>
-    </nav>
-
-    <main>
-        <div class="back-btn-container" id="back">
-            <img class="backBtn" src="/imgs/back-arrow.png">
-        </div>
-
-        <section id="inputFields">
-            <div class="current-page">
-                <!--the templates below can be appended in here via `template.content.cloneNode(true)` in JS-->
+        <main>
+            <div class="back-btn-container" id="back">
+                <img class="backBtn" src="/imgs/back-arrow.png" />
             </div>
 
-            <template class="page-student">
-                <h1 class="edu">Student Loans</h1>
-                <ul class="education-content">
-                    <li>
-                        <h2>Monthly Tuition</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Living Expenses</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Supplies</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Other</h2>
-                        <input type="text">
-                    </li>
-                </ul>
-            </template>
+            <section id="inputFields">
+                <div class="current-page">
+                    <!--the templates below can be appended in here via `template.content.cloneNode(true)` in JS-->
+                </div>
 
-            <template class="page-housing">
-                <h1 class="edu">Housing</h1>
-                <ul class="education-content">
-                    <li>
-                        <h2>Mortgage Payment</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Electricity</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Water</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Other</h2>
-                        <input type="text">
-                    </li>
-                </ul>
-            </template>
+                <template class="page-student">
+                    <h1 class="edu">Student Loans</h1>
+                    <ul class="education-content">
+                        <li>
+                            <h2>Monthly Tuition</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Living Expenses</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Supplies</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Other</h2>
+                            <input type="text" />
+                        </li>
+                    </ul>
+                </template>
 
-            <template class="page-essentials">
-                <h1 class="edu">Essentials</h1>
-                <ul class="education-content">
-                    <li>
-                        <h2>Utilities</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Groceries</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Insurance</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Other</h2>
-                        <input type="text">
-                    </li>
-                </ul>
-            </template>
+                <template class="page-housing">
+                    <h1 class="edu">Housing</h1>
+                    <ul class="education-content">
+                        <li>
+                            <h2>Mortgage Payment</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Electricity</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Water</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Other</h2>
+                            <input type="text" />
+                        </li>
+                    </ul>
+                </template>
 
-            <template class="page-lifestyle">
-                <h1 class="edu">Lifestyle</h1>
-                <ul class="education-content">
-                    <li>
-                        <h2>Dining</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Streaming services</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Gym</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Other</h2>
-                        <input type="text">
-                    </li>
-                </ul>
-            </template>
+                <template class="page-essentials">
+                    <h1 class="edu">Essentials</h1>
+                    <ul class="education-content">
+                        <li>
+                            <h2>Utilities</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Groceries</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Insurance</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Other</h2>
+                            <input type="text" />
+                        </li>
+                    </ul>
+                </template>
 
-            <template class="page-future-proofing">
-                <h1 class="edu">Future proofing</h1>
-                <ul class="education-content">
-                    <li>
-                        <h2>Savings</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Investments</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Retirements</h2>
-                        <input type="text">
-                    </li>
-                    <li>
-                        <h2>Other</h2>
-                        <input type="text">
-                    </li>
-                </ul>
-            </template>
-        </section>
+                <template class="page-lifestyle">
+                    <h1 class="edu">Lifestyle</h1>
+                    <ul class="education-content">
+                        <li>
+                            <h2>Dining</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Streaming services</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Gym</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Other</h2>
+                            <input type="text" />
+                        </li>
+                    </ul>
+                </template>
 
-        <section id="summary" class="hidden">
+                <template class="page-future-proofing">
+                    <h1 class="edu">Future proofing</h1>
+                    <ul class="education-content">
+                        <li>
+                            <h2>Savings</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Investments</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Retirements</h2>
+                            <input type="text" />
+                        </li>
+                        <li>
+                            <h2>Other</h2>
+                            <input type="text" />
+                        </li>
+                    </ul>
+                </template>
+            </section>
 
-        </section>
+            <section id="summary" class="hidden"></section>
 
-        <button id="cont">Continue</button>
-    </main>
-</body>
-
+            <button id="cont">Continue</button>
+        </main>
+    </body>
 </html>
