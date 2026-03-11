@@ -172,6 +172,7 @@ main {
     padding: 30px 90px;
     font-size: 30px;
     background-color: var(--thir);
+    margin-left: 700px;
 }
 
 hr {
@@ -223,12 +224,13 @@ hr:not(.fulfilled) {
     position: relative;
 } 
 
-/*
+
 .edu {
     display: flex;
-    margin-left: 45%;
+    margin: 30%;
+    margin-top: -6%;
 }
-
+/*
 .input1 {
     justify-content: space-between;
     display: flex;
@@ -247,3 +249,4 @@ hr:not(.fulfilled) {
     margin: auto;
     position: relative;
 }
+*/
