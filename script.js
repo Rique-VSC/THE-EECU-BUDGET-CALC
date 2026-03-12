@@ -77,3 +77,4 @@ observer.observe(view, {
 });
 
 categories.set(view.id, new Category(last));
+
