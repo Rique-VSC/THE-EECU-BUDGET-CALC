@@ -1,80 +1,56 @@
 import './navigation.js';
 
-
 async function careerSelect() {
-  const selectElement = document.getElementById('occu');
-  const occupationSalaryMap = new Map();
-  
-  try {
+const selectElement = document.getElementById('occu');
+const occupationSalaryMap = new Map ();
+try{
     const response = await fetch('https://eecu-data-server.vercel.app/data');
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    if (!response.ok) throw new Errorr (`HTTP error! status: ${response.status}`);
 
-    const users = await response.json();
 
-    users.forEach(user => {
-      occupationSalaryMap.set(user["Occupation"], user["Salary"]);
-      const option = new Option(user["Occupation"], user["Occupation"]);
-      selectElement.add(option);
-    });
+const users = await response.json();
+console.log(users);
 
-    selectElement.addEventListener('change', () => {
-      salary.textContent = occupationSalaryMap.get(selectElement.value) || '';
-    });
-  } catch (error) {
-    console.error('Error populating user select:', error);
-  }
+users.forEach(user => {
+    occupationSalaryMap.set(user["Occupation"], user["Salary"]);
+    const option = new Option(user["Occupation"], user["Occupation"]);
+    selectElement.addEventListener(option);
+});
+
+selectElement.addEventListener('change', () => {
+    const rawSalary = occupationSalaryMap.get(selectElement.Value);
+    salary.textContent = rawSalary ? parseFloat(rawSalary).toFixed(2) : '0.00';        
+});
+
+} catch (error) {
+console.error('Error populating user select:;,error');
+}
 }
 careerSelect();
 
-const view = document.querySelector('.current-page');
+//WORK ON YOUR OCCUPATIONS//
+// you should do your doughnut though//
 
-/** @type {Map<string, Category>} */
-const categories = new Map();
+const config = {
+    type: 'doughnut',
+    data: data,
+  };
 
-class Category {
-    /** @type {HTMLInputElement[]} */
-    inputs = [];
-    /** @type {Map<string, number>} */
-    values = new Map();
-    name = '';
-    constructor(name) {
-        this.name = name;
-        this.inputs = [...view.querySelectorAll('input')];
-        for (const input of this.inputs) {
-            input.addEventListener('input', () => {
-                this.values.set(
-                    input.previousElementSibling.textContent,
-                    Number(input.value)
-                );
-                input.value = Number(input.value).toFixed(2);
-            });
-            this.values.set(input.previousElementSibling.textContent, Number(input.value));
-        }
-    }
-}
-
-let last = view.id;
-const observer = new MutationObserver(() => {
-    if (last !== view.id) {
-        if (categories.has(view.id)) {
-            const category = categories.get(view.id);
-            for (let i = 0; i < category.inputs.length; i++) {
-                const prev_input = category.inputs[i];
-                const input = view.querySelectorAll('input').item(i);
-                input.value = prev_input.value;
-            }
-            categories.set(last = view.id, new Category(view.id));
-        } else {
-            categories.set(last = view.id, new Category(view.id));
-        }
-        console.log(categories);
-    }
-});
-
-observer.observe(view, {
-    subtree: true,
-    childList: true
-});
-
-categories.set(view.id, new Category(last));
+const data = {
+    labels: [
+      'green',
+      'purple',
+      'Yellow'
+    ],
+    datasets: [{
+      label: 'The doughnut',
+      data: [300, 50, 100],
+      backgroundColor: [
+        'rgb(0, 255, 0)',
+        'rgb(108, 59, 170',
+        'rgb(255, 205, 86)'
+      ],
+      hoverOffset: 4
+    }]
+  };
 
