@@ -253,3 +253,24 @@ hr:not(.fulfilled) {
 }
 */
 
+
+#occu{
+padding: 10px;
+font-size: 30px;
+font-family: "sniglet", system-ui;
+font-weight: bold;
+}
+
+#salary{
+    padding: 10px;
+    font-size: 30px;
+    font-family: "sniglet", system-ui;
+    font-weight: bold;
+}
+
+p{
+    padding: 10px;
+    font-size: 30px;
+    font-family: "sniglet", system-ui;
+    font-weight: bold;
+}

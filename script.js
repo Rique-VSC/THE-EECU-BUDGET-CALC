@@ -53,15 +53,16 @@ console.error(error);
 
 careerSelect();
 // saved salary//
+
 const savedsalary = Number(localStorage.getItem("salary")) || 0;
 
-page_view.replaceChildren(...fragment.childNodes);
 
 
 
 // you should do your doughnut though//
 // I did my doughnut though//
 //oh//
+
 
 const data = {
     labels: [
@@ -72,7 +73,7 @@ const data = {
     ],
     datasets: [{
       label: 'The doughnut',
-      data: [300, 200, 100, salary],
+      data: [300, 200, 100,],
       backgroundColor: [
         'rgb(0, 255, 0)',
         'rgb(108, 59, 170)',
@@ -88,7 +89,7 @@ const data = {
     data: data
   };
 
-const templates = [...document.querySelectorAll('template')];
+
 
 
 

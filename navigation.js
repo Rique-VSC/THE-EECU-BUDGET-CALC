@@ -45,7 +45,7 @@ function navigate(page) {
     }
     // const prev_page = current_page_number;
     // const prev = /** @type {HTMLTemplateElement} */ (document.querySelector(`template.${page_view.id}`));
-    const template = templates[current_page_number = page];
+    let template = templates [current_page_number = page];
     const fragment = template.content.cloneNode(true);
     page_view.replaceChildren(...fragment.childNodes);
     page_view.id = template.className;
@@ -61,6 +61,10 @@ function navigate(page) {
 }
 
 navigate(0);
+
+back_button.addEventListener('click', () => {
+    navigate(current_page_number - 1);
+});
 
 continue_button.addEventListener('click', () => {
 
