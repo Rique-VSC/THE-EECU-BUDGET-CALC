@@ -62,5 +62,15 @@ function navigate(page) {
 
 navigate(0);
 
-continue_button.addEventListener('click', () => navigate(current_page_number + 1));
-back_button.addEventListener('click', () => navigate(current_page_number - 1));
+continue_button.addEventListener('click', () => {
+
+const inputs = document.querySelectorAll('input');
+
+inputs.forEach((input, i) => {
+localStorage.setItem(`expense_${current_page_number}_${i}`, input.value);
+});
+
+navigate(current_page_number + 1);
+
+});
+
