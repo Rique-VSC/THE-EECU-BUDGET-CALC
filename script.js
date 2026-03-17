@@ -64,32 +64,6 @@ const savedsalary = Number(localStorage.getItem("salary")) || 0;
 //oh//
 
 
-const data = {
-    labels: [
-      'housing',
-      'Essential',
-      'Savings',
-      'Salary'
-    ],
-    datasets: [{
-      label: 'The doughnut',
-      data: [300, 200, 100,],
-      backgroundColor: [
-        'rgb(0, 255, 0)',
-        'rgb(108, 59, 170)',
-        'rgb(255, 205, 86)',
-        'rgb(255, 99, 132)'
-      ],
-      hoverOffset: 4
-    }]
-  };
-
-  const config = {
-    type: 'doughnut',
-    data: data
-  };
-
-
 
 
 
