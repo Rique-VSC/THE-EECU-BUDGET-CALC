@@ -80,7 +80,7 @@ function navigate(page) {
                 }
             });
 
-            // ✅ FIXED: moved inside here
+            
             const totalExpenses = housing + essentials + savings;
             const remaining = salary - totalExpenses;
 

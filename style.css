@@ -274,3 +274,10 @@ p{
     font-family: "sniglet", system-ui;
     font-weight: bold;
 }
+
+@media (max-width: 768px) {
+    #pie {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
